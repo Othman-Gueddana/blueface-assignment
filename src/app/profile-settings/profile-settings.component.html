@@ -1,7 +1,10 @@
 <div>
   <h1>​{{ title }}​</h1>
   <div>
-    <p>​Username: {{ user?.username }}​</p>
+    <p>​Username: {{ user.username }}​</p>
+  </div>
+  <div>
+    <p>Email: {{ user.email }}​</p>
   </div>
   <form (ngSubmit)="saveProfile()">
     <div>
@@ -10,8 +13,9 @@
         type="text"
         [(ngModel)]="user.firstName"
         name="firstName"
-        [disabled]="isLoading"
+        [disabled]="isLoading || isSaving"
         (input)="clearError()"
+        (change)="user.firstName = user.firstName.trim()"
       />
     </div>
     <div>
@@ -20,11 +24,12 @@
         type="text"
         [(ngModel)]="user.lastName"
         name="lastName"
-        [disabled]="isLoading"
+        [disabled]="isLoading || isSaving"
         (input)="clearError()"
+        (change)="user.lastName = user.lastName.trim()"
       />
     </div>
-    <button type="submit" [disabled]="isLoading">Save</button>
+    <button type="submit" [disabled]="isLoading || isSaving">Save</button>
   </form>
   <p *ngIf="isLoading">​Loading profile...​</p>
   <p *ngIf="isSaving">​Saving profile...​</p>

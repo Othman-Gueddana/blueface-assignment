@@ -19,6 +19,7 @@ export class ProfileSettingsComponent implements OnInit {
       lastName: '',
       username: '',
       age: 0,
+      email: '',
     }
   }
 
@@ -48,6 +49,10 @@ export class ProfileSettingsComponent implements OnInit {
     this.error = ''
   }
 
+  onChange() {
+    console.log('object')
+  }
+
   async saveProfile() {
     this.isSaving = true
     this.clearError()
@@ -56,6 +61,7 @@ export class ProfileSettingsComponent implements OnInit {
         this.user.firstName,
         this.user.lastName
       )) as IProfile
+      this.user = (await this.profile.setUserEmail()) as IProfile
     } catch (error) {
       this.error = error.error
     }

@@ -5,6 +5,7 @@ export interface IProfile {
   lastName: string
   username: string
   age: number
+  email: string
 }
 
 @Injectable({
@@ -24,6 +25,7 @@ export class ProfileService {
             lastName: 'Collins',
             username: 'michael.collins',
             age: 30,
+            email: '',
           }
           resolve(this.user)
         } else {
@@ -35,13 +37,26 @@ export class ProfileService {
 
   setName(firstName: string, lastName: string) {
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
+      setTimeout(async () => {
         if (Math.round(Math.random())) {
           this.user.firstName = firstName
           this.user.lastName = lastName
           resolve(this.user)
         } else {
           reject({ error: 'Invalid name' })
+        }
+      }, Math.random() * 5000)
+    })
+  }
+
+  setUserEmail() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (Math.round(Math.random())) {
+          this.user.email = `${this.user.firstName}.${this.user.lastName}@​blueface.com​`
+          resolve(this.user)
+        } else {
+          reject({ error: 'Error on email generation' })
         }
       }, Math.random() * 5000)
     })
