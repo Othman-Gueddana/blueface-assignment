@@ -9,12 +9,22 @@
       <input
         type="text"
         [(ngModel)]="user.firstName"
-        name="name"
+        name="firstName"
         [disabled]="isLoading"
         (input)="clearError()"
       />
-      <button type="submit" [disabled]="isLoading">Save</button>
     </div>
+    <div>
+      <label>Last Name:​</label>
+      <input
+        type="text"
+        [(ngModel)]="user.lastName"
+        name="lastName"
+        [disabled]="isLoading"
+        (input)="clearError()"
+      />
+    </div>
+    <button type="submit" [disabled]="isLoading">Save</button>
   </form>
   <p *ngIf="isLoading">​Loading profile...​</p>
   <p *ngIf="isSaving">​Saving profile...​</p>

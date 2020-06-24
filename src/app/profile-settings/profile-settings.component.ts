@@ -52,7 +52,10 @@ export class ProfileSettingsComponent implements OnInit {
     this.isSaving = true
     this.clearError()
     try {
-      this.user = (await this.profile.setName(this.user.firstName)) as IProfile
+      this.user = (await this.profile.setName(
+        this.user.firstName,
+        this.user.lastName
+      )) as IProfile
     } catch (error) {
       this.error = error.error
     }
