@@ -1,0 +1,32 @@
+name: CICD
+
+on:
+  push:
+    branches: [i18n]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Node
+        uses: actions/setup-node@v1
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build App
+        run: npm run build:i18n
+
+      # - name: Test
+      #   run: npm run test
+
+      - name: Deploy with GitHub Action for Firebase
+        uses: w9jds/firebase-action@v1.5.0
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
