@@ -10,28 +10,52 @@ export class ProfileSettingsComponent implements OnInit {
   public title = 'Profile'
   public user: IProfile
   public isLoading: boolean
+  public isSaving: boolean
+  public error: string
 
-  constructor(private profile: ProfileService) {}
+  constructor(private profile: ProfileService) {
+    this.user = {
+      firstName: '',
+      lastName: '',
+      username: '',
+      age: 0,
+    }
+  }
 
   private async getProfile() {
     let tryNum = 0
-    while (!this.user) {
+    let user: IProfile
+    while (!user) {
       tryNum++
       console.log('try', tryNum)
       try {
-        this.user = await this.profile.getProfileUser()
+        user = await this.profile.getProfileUser()
       } catch (error) {
         console.log(error.error)
       }
     }
     console.log('success')
+    return user
   }
 
   async ngOnInit() {
     this.isLoading = true
-    await this.getProfile()
+    this.user = await this.getProfile()
     this.isLoading = false
   }
 
-  saveProfile() {}
+  clearError() {
+    this.error = ''
+  }
+
+  async saveProfile() {
+    this.isSaving = true
+    this.clearError()
+    try {
+      this.user = (await this.profile.setName(this.user.firstName)) as IProfile
+    } catch (error) {
+      this.error = error.error
+    }
+    this.isSaving = false
+  }
 }

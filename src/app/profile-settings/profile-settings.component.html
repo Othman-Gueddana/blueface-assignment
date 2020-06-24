@@ -3,12 +3,20 @@
   <div>
     <p>​Username: {{ user?.username }}​</p>
   </div>
-  <div>
-    <label>​First Name:​</label>
-    <input type="text" [value]="user?.firstName" [disabled]="!user" />
-    <button type="button" [disabled]="!user">Save</button>
-  </div>
+  <form (ngSubmit)="saveProfile()">
+    <div>
+      <label>​First Name:​</label>
+      <input
+        type="text"
+        [(ngModel)]="user.firstName"
+        name="name"
+        [disabled]="isLoading"
+        (input)="clearError()"
+      />
+      <button type="submit" [disabled]="isLoading">Save</button>
+    </div>
+  </form>
   <p *ngIf="isLoading">​Loading profile...​</p>
-  <p>​Saving profile...​</p>
-  <p>​Error!</p>
+  <p *ngIf="isSaving">​Saving profile...​</p>
+  <p *ngIf="error">​Error! {{ error }}</p>
 </div>
