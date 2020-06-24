@@ -7,7 +7,7 @@ import { IProfile, ProfileService } from '../profile-service/profile.service'
   styleUrls: ['./profile-settings.component.css'],
 })
 export class ProfileSettingsComponent implements OnInit {
-  public title = 'Profile'
+  // public title = 'Profile'
   public user: IProfile
   public isLoading: boolean
   public error: string

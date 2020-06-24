@@ -3,11 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "extract": "ng xi18n --output-path=src/locale",
+    "start": "ng serve",
+    "start:fr": "ng serve --configuration=fr",
+    "start:es": "ng serve --configuration=es",
+    "build": "ng build",
+    "build:fr": "ng build --configuration=production-fr",
+    "build:es": "ng build --configuration=production-es"
   },
   "private": true,
   "dependencies": {
