@@ -104,6 +104,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "blueface-assignment"
+    }
+  },
+  "defaultProject": "blueface-assignment",
+  "cli": {
+    "analytics": "2a64e9e2-63d1-4c39-a3db-c16fa7f5b3cf"
+  }
 }
