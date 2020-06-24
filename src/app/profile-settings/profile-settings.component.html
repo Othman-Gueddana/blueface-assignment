@@ -11,9 +11,9 @@
       <label>​First Name:​</label>
       <input
         type="text"
-        [(ngModel)]="user.firstName"
         name="firstName"
-        [disabled]="isLoading || isSaving"
+        [(ngModel)]="user.firstName"
+        [disabled]="isLoading"
         (input)="clearError()"
         (change)="user.firstName = user.firstName.trim()"
       />
@@ -22,16 +22,16 @@
       <label>Last Name:​</label>
       <input
         type="text"
-        [(ngModel)]="user.lastName"
         name="lastName"
-        [disabled]="isLoading || isSaving"
+        [(ngModel)]="user.lastName"
+        [disabled]="isLoading"
         (input)="clearError()"
         (change)="user.lastName = user.lastName.trim()"
       />
     </div>
-    <button type="submit" [disabled]="isLoading || isSaving">Save</button>
+    <button type="submit" [disabled]="isLoading">Save</button>
   </form>
-  <p *ngIf="isLoading">​Loading profile...​</p>
-  <p *ngIf="isSaving">​Saving profile...​</p>
+  <p *ngIf="!user.username && isLoading">​Loading profile...​</p>
+  <p *ngIf="user.username && isLoading">​Saving profile...​</p>
   <p *ngIf="error">​Error! {{ error }}</p>
 </div>

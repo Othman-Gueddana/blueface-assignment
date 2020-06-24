@@ -10,7 +10,6 @@ export class ProfileSettingsComponent implements OnInit {
   public title = 'Profile'
   public user: IProfile
   public isLoading: boolean
-  public isSaving: boolean
   public error: string
 
   constructor(private profile: ProfileService) {
@@ -49,12 +48,8 @@ export class ProfileSettingsComponent implements OnInit {
     this.error = ''
   }
 
-  onChange() {
-    console.log('object')
-  }
-
   async saveProfile() {
-    this.isSaving = true
+    this.isLoading = true
     this.clearError()
     try {
       this.user = (await this.profile.setName(
@@ -65,6 +60,6 @@ export class ProfileSettingsComponent implements OnInit {
     } catch (error) {
       this.error = error.error
     }
-    this.isSaving = false
+    this.isLoading = false
   }
 }
