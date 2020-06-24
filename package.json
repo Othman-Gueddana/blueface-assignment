@@ -10,7 +10,7 @@
     "start": "ng serve",
     "start:fr": "ng serve --configuration=fr",
     "start:es": "ng serve --configuration=es",
-    "build": "ng build",
+    "build": "ng build --prod",
     "build:fr": "ng build --configuration=production-fr",
     "build:es": "ng build --configuration=production-es"
   },
