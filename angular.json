@@ -79,14 +79,6 @@
                 }
               ]
             },
-            "en": {
-              "outputPath": "dist/blueface-assignment-en/",
-              "baseHref": "/en/",
-              "i18nFile": "src/locale/messages.en.xlf",
-              "i18nFormat": "xlf",
-              "i18nLocale": "en",
-              "i18nMissingTranslation": "error"
-            },
             "fr": {
               "outputPath": "dist/blueface-assignment-fr/",
               "baseHref": "/fr/",
@@ -113,9 +105,6 @@
           "configurations": {
             "production": {
               "browserTarget": "blueface-assignment:build:production"
-            },
-            "en": {
-              "browserTarget": "blueface-assignment:build:en"
             },
             "fr": {
               "browserTarget": "blueface-assignment:build:fr"

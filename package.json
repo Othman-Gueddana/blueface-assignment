@@ -9,13 +9,11 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "extract": "ng xi18n --output-path=src/locale",
-    "start:en": "ng serve --configuration=en",
-    "start:fr": "ng serve --configuration=fr --port 4201",
-    "start:es": "ng serve --configuration=es --port 4202",
-    "build:en": "ng build --prod --configuration=en",
-    "build:fr": "ng build --prod --configuration=fr",
-    "build:es": "ng build --prod --configuration=es",
-    "build:i18n": "npm run build:en && npm run build:fr && npm run build:es"
+    "start:fr": "npm start -- --configuration=fr --port 4201",
+    "start:es": "npm start -- --configuration=es --port 4202",
+    "build:fr": "npm run build -- --configuration=fr",
+    "build:es": "npm run build -- --configuration=es",
+    "build:i18n": "npm run build && npm run build:fr && npm run build:es"
   },
   "private": true,
   "dependencies": {
