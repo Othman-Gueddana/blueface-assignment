@@ -2,7 +2,7 @@ name: CICD
 
 on:
   push:
-    branches: [i18n]
+    branches: [master]
 
 jobs:
   deploy:
