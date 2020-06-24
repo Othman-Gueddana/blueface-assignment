@@ -79,61 +79,25 @@
                 }
               ]
             },
-            "production-fr": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "outputPath": "dist/blueface-assignment-fr/",
-              "i18nFile": "src/locale/messages.fr.xlf",
+            "en": {
+              "outputPath": "dist/blueface-assignment-en/",
+              "baseHref": "/en/",
+              "i18nFile": "src/locale/messages.en.xlf",
               "i18nFormat": "xlf",
-              "i18nLocale": "fr",
+              "i18nLocale": "en",
               "i18nMissingTranslation": "error"
             },
             "fr": {
-              "aot": true,
               "outputPath": "dist/blueface-assignment-fr/",
+              "baseHref": "/fr/",
               "i18nFile": "src/locale/messages.fr.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "fr",
               "i18nMissingTranslation": "error"
             },
-            "production-es": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "outputPath": "dist/blueface-assignment-es/",
-              "i18nFile": "src/locale/messages.es.xlf",
-              "i18nFormat": "xlf",
-              "i18nLocale": "es",
-              "i18nMissingTranslation": "error"
-            },
             "es": {
-              "aot": true,
               "outputPath": "dist/blueface-assignment-es/",
+              "baseHref": "/es/",
               "i18nFile": "src/locale/messages.es.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "es",
@@ -149,6 +113,9 @@
           "configurations": {
             "production": {
               "browserTarget": "blueface-assignment:build:production"
+            },
+            "en": {
+              "browserTarget": "blueface-assignment:build:en"
             },
             "fr": {
               "browserTarget": "blueface-assignment:build:fr"
