@@ -6,13 +6,14 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "extract": "ng xi18n --output-path=src/locale",
     "start": "ng serve",
-    "start:fr": "ng serve --configuration=fr",
-    "start:es": "ng serve --configuration=es",
     "build": "ng build --prod",
-    "build:fr": "ng build --configuration=production-fr",
-    "build:es": "ng build --configuration=production-es"
+    "extract": "ng xi18n --output-path=src/locale",
+    "start:fr": "npm start -- --configuration=fr --port 4201",
+    "start:es": "npm start -- --configuration=es --port 4202",
+    "build:fr": "npm run build -- --configuration=fr",
+    "build:es": "npm run build -- --configuration=es",
+    "build:i18n": "npm run build && npm run build:fr && npm run build:es"
   },
   "private": true,
   "dependencies": {
