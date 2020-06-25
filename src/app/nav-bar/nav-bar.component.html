@@ -1,5 +1,13 @@
-<select [(ngModel)]="siteLocale" #language (change)="onChange(language.value)">
+<select
+  *ngIf="!isDev"
+  [(ngModel)]="siteLocale"
+  #language
+  (change)="onChange(language.value)"
+>
   <option *ngFor="let lang of languageList" [value]="lang.code">
     {{ lang.label }}
   </option>
 </select>
+<app-github-corner
+  url="https://github.com/batbrain9392/blueface-assignment"
+></app-github-corner>
