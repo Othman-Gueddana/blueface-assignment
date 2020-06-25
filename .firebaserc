@@ -1,20 +1,5 @@
 {
   "projects": {
     "default": "ng-i18n"
-  },
-  "targets": {
-    "ng-i18n": {
-      "hosting": {
-        "en": [
-          "ng-i18n"
-        ],
-        "fr": [
-          "fr-ng-i18n"
-        ],
-        "es": [
-          "es-ng-i18n"
-        ]
-      }
-    }
   }
 }

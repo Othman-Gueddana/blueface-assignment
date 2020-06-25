@@ -2,4 +2,4 @@
 
 # BluefaceAssignment (ng 9.1.9)
 
-The problem statement is in `ProblemStatement.pdf`. Sites are available here - [English](https://ng-i18n.web.app/), [French](https://fr-ng-i18n.web.app/), [Spanish](https://es-ng-i18n.web.app/).
+The problem statement is in `ProblemStatement.pdf`. Sites are available here - [English](https://ng-i18n.web.app/en-US/), [French](https://ng-i18n.web.app/fr/), [Spanish](https://ng-i18n.web.app/es/).
