@@ -15,16 +15,17 @@ export class NavBarComponent implements OnInit {
     { code: 'es', label: 'Spanish' },
   ]
 
-  constructor() {}
-
   ngOnInit() {
     this.siteLocale = window.location.pathname.split('/')[1]
     this.siteLanguage = this.languageList.find(
       (f) => f.code === this.siteLocale
-    ).label
+    )?.label
+    if (!this.siteLanguage) {
+      this.onChange(this.languageList[0].code)
+    }
   }
 
-  onChange(selectedLang: string) {
-    window.location.href = `/${selectedLang}`
+  onChange(selectedLangCode: string) {
+    window.location.href = `/${selectedLangCode}`
   }
 }
