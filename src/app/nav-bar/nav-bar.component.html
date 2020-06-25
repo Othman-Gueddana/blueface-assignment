@@ -1,0 +1,5 @@
+<select [(ngModel)]="siteLocale" #language (change)="onChange(language.value)">
+  <option *ngFor="let lang of languageList" [value]="lang.code">
+    {{ lang.label }}
+  </option>
+</select>

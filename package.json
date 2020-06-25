@@ -11,9 +11,7 @@
     "extract": "ng xi18n --output-path=src/locale",
     "start:fr": "npm start -- --configuration=fr --port 4201",
     "start:es": "npm start -- --configuration=es --port 4202",
-    "build:fr": "npm run build -- --configuration=fr",
-    "build:es": "npm run build -- --configuration=es",
-    "build:i18n": "npm run build && npm run build:fr && npm run build:es"
+    "build:i18n": "npm run build -- --localize"
   },
   "private": true,
   "dependencies": {
